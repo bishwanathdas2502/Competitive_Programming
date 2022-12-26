@@ -18,7 +18,13 @@ typedef long double lld;
 
 
 
+
+#ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x<<" "; _print(x); cerr << endl;
+#else
+#define debug(x)
+#endif
+
 
 
 void _print(ll t) {cerr << t;}
@@ -28,6 +34,7 @@ void _print(char t) {cerr << t;}
 void _print(lld t) {cerr << t;}
 void _print(double t) {cerr << t;}
 void _print(ull t) {cerr << t;}
+void _print(bool t) {cerr << t;}
 
 template <class T, class V> void _print(pair <T, V> p);
 template <class T> void _print(vector <T> v);
@@ -39,6 +46,7 @@ template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_prin
 template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
+template <class T, class V> void _print(unordered_map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
 /*---------------------------------------------------------------------------------------------------------------------------*/
 ll gcd(ll a, ll b) {if (b > a) {return gcd(b, a);} if (b == 0) {return a;} return gcd(b, a % b);}
@@ -63,30 +71,29 @@ ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprim
 
 void solve()
 {
-    int n;
-    cin >> n;
-    
-    
+	int n;
+	cin >> n;
+	
 
 }
 
 int32_t main()
 {
-    FIO;
+	FIO;
 #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
+	freopen("input.txt", "r", stdin);
 
-    freopen("output.txt", "w", stdout);
+	freopen("output.txt", "w", stdout);
 
-    freopen("error.txt","w",stderr);
+	freopen("error.txt","w",stderr);
 
 #endif
 
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
-    return 0;
+	int t = 1;
+	cin >> t;
+	while (t--)
+	{
+		solve();
+	}
+	return 0;
 }
