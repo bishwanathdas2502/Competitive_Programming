@@ -62,6 +62,7 @@ ll mod_add(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a + b) % m) + m) %
 ll mod_mul(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a * b) % m) + m) % m;}
 ll mod_sub(ll a, ll b, ll m) {a = a % m; b = b % m; return (((a - b) % m) + m) % m;}
 ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprime(b, m), m) + m) % m;}  //only for prime m
+ll phin(ll n) {ll number = n; if (n % 2 == 0) {number /= 2; while (n % 2 == 0) n /= 2;} for (ll i = 3; i <= sqrt(n); i += 2) {if (n % i == 0) {while (n % i == 0)n /= i; number = (number / i * (i - 1));}} if (n > 1)number = (number / n * (n - 1)) ; return number;} 
 
 
 
@@ -71,29 +72,30 @@ ll mod_div(ll a, ll b, ll m) {a = a % m; b = b % m; return (mod_mul(a, mminvprim
 
 void solve()
 {
-	int n;
-	cin >> n;
-	
+    int n;
+    cin >> n;
+    
+    
 
 }
 
 int32_t main()
 {
-	FIO;
+    FIO;
 #ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
+    freopen("input.txt", "r", stdin);
 
-	freopen("output.txt", "w", stdout);
+    freopen("output.txt", "w", stdout);
 
-	freopen("error.txt","w",stderr);
+    freopen("error.txt","w",stderr);
 
 #endif
 
-	int t = 1;
-	cin >> t;
-	while (t--)
-	{
-		solve();
-	}
-	return 0;
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        solve();
+    }
+    return 0;
 }
