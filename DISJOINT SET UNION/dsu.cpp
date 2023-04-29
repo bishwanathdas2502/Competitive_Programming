@@ -32,3 +32,25 @@ void Union(int u,int v){
 				rank[u]++;
 		}
 }
+
+
+//finding number of component of a graph in  DSU
+
+
+int n = nodes.size; //set to number of nodes
+make_set(n);
+int cnt = n; //intially n component
+
+
+//if we add and edge between two nodes whose par are different reduce the count 
+for(int i = 0;i<n;i++){
+	for(int j = i+1;j<n;j++){
+	   int l = sim(strs[i],strs[j]);
+	   if((l == 0 || l == 2) && findPar(i) != findPar(j)){
+		   cnt--;
+		   Union(i,j);
+	   }
+	}
+}
+
+return cnt;
