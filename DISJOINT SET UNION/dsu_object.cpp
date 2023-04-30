@@ -11,6 +11,8 @@ public:
     DSU(int n){
         par.push_back(0);
         rank.push_back(0);
+	    
+	//check for indexing whether 0-based or 1-based
         for(int i=1;i<=n;i++){
             par.push_back(i);
             rank.push_back(0);
