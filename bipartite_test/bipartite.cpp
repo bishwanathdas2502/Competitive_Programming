@@ -38,3 +38,24 @@ pair<int,int> dfs(int node,int par,int c){
 	return ret;
 
 }
+
+
+
+
+
+//only bipartite check
+
+int check(int node,int par,int c){
+	col[node] = c;
+	bool ret = true;
+	for(auto child : adj[node]){
+		if(child == par || col[child] == -c)continue;
+		if(col[child] == c) return false;
+		ret = ret & check(child,node,-c);
+	}
+	return ret;
+}
+
+
+
+
