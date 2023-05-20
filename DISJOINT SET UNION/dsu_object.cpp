@@ -1,48 +1,59 @@
-
-
-
-
 class DSU{
-	
-vector<int> par;
-vector<int> rank;
-
-public:
+    
+    public:
+    vector<int> par;
+    vector<int> rank;
+    vector<int> size;
+    
     DSU(int n){
-        par.push_back(0);
-        rank.push_back(0);
+        par.resize(n+1);
+        rank.resize(n+1,0);
+        size.resize(n+1,0);
 	    
-	//check for indexing whether 0-based or 1-based
-        for(int i=1;i<=n;i++){
-            par.push_back(i);
-            rank.push_back(0);
+	    
+	// 0 based indexing now
+        for(int i = 0;i<=n;i++){
+            par[i] = i;
+            size[i] = 1;
         }
     }
-
+    
     int findPar(int node){
-        if(node == par[node]){
+        if(par[node] == node){
             return node;
         }
-
         return par[node] = findPar(par[node]);
     }
-
-    void Union(int node1,int node2){
-        int u  = findPar(node1);
-        int v = findPar(node2);
-
-        if(rank[u] < rank[v]){
-            par[u] = v;
+    
+    
+    void UnionbyRank(int a,int b){
+        a = findPar(a);
+        b = findPar(b);
+        
+        if(rank[a] > rank[b]){
+            par[b] = a;
         }
-        else if(rank[u] > rank[v]){
-            par[v] = u;
+        else if(rank[a] < rank[b]){
+            par[a] = b;
         }
         else{
-            par[v] = u;
-            rank[u]++;
+            par[b] = a;
+            rank[a]++;
         }
     }
 
 
+    void UnionbySize(int node1,int node2){
+        int a = findPar(node1);
+        int b = findPar(node2);
 
+        if(size[a] > size[b]){
+            par[b] = a;
+            size[a] += size[b];
+        }
+        else{
+            par[a] = b;
+            size[b] += size[a]; 
+        }
+    }
 };
