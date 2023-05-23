@@ -1,0 +1,15 @@
+
+Given a grid of 0 and 1 find the largest maximal square
+
+for a point 
+
+[current sqaure size]------------> square right
+|-
+|    -
+|        -
+|          -square diagonal
+\/
+sqaure down
+
+
+current square size = min(sqaure right,square down,square diagonal) + 1
