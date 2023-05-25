@@ -13,7 +13,8 @@ vector<int> toposort(int n){
         }
     }
 
-    
+    // to get lexographical smallest result use 
+    //priority_queue<int,vector<int>,greater<int>> q
     queue<int> q;
 
     for(int i = 1;i<=n;i++){
