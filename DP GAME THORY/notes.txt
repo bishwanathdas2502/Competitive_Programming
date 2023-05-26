@@ -1,0 +1,31 @@
+
+  Best problem
+  https://leetcode.com/problems/stone-game-ii/
+
+
+Suppose there are two player Alice and Bob where both are playing optimally 
+
+
+
+steps tp solve 
+
+1. define the state 
+  f(p,other changing parameters) where p is the the turn where 0 means it is the turn of Alice
+  
+  
+2 transition
+  for alice
+  f(0,other parameter) = max(s + f(1,Other parameter)) s ----> means that adding parameter
+  maximum over all the value
+  
+  
+  for bob => p = 1
+  f(1,other parameter) = min(f(0,other parameter))   minimize the score of bob so that Alice can get more points
+  
+  
+  
+
+  
+  
+  
+  
