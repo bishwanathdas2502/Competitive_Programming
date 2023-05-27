@@ -1,6 +1,7 @@
 
   Best problem
   https://leetcode.com/problems/stone-game-ii/
+  https://leetcode.com/problems/stone-game-iii/description/
 
 
 Suppose there are two player Alice and Bob where both are playing optimally 
