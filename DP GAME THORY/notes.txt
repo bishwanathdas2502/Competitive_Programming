@@ -21,7 +21,10 @@ steps tp solve
   
   
   for bob => p = 1
-  f(1,other parameter) = min(f(0,other parameter))   minimize the score of bob so that Alice can get more points
+  f(1,other parameter) = min(f(0,other parameter))   minimize the score of bob so that Alice can get more points 
+  donot add any result
+  
+  derive the answer by calculating what is optimal for alice from that derive for BOB
   
   
   
