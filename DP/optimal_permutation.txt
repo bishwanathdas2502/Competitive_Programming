@@ -1,0 +1,39 @@
+
+Sometimes the question used to ask for optimal permutation of an array based on certain constraints
+
+
+intuition
+
+---> in recursion pick element and recursively solve the left and right and merge them
+
+
+let array = [a,b,c,d]
+
+solution like
+dp[left][right] = min(dp[left][k] + dp[k][right] + cost)
+
+
+pseudocode
+--------------------
+int f(int left,int right){
+//base case
+if(left > right)return 0;
+
+
+for(int i = left;i<=right;i++)
+{ 
+  //solve left
+  int left_cost = f(left,i-1);
+  
+  //solve right
+  int right_cost = f(i+1,right)
+  
+  //merge all cost
+  
+  cost = min(cost,left_cost+right_cost+merge_cost)
+  
+}
+
+
+in this we are indirectly finding the optimal permutation
+
