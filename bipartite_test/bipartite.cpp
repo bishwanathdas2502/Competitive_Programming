@@ -45,17 +45,29 @@ pair<int,int> dfs(int node,int par,int c){
 
 //only bipartite check
 
-int check(int node,int par,int c){
-	col[node] = c;
-	bool ret = true;
-	for(auto child : adj[node]){
-		if(child == par || col[child] == -c)continue;
-		if(col[child] == c) return false;
-		ret = ret & check(child,node,-c);
+int col[20005];
+int vis[20005];
+bool checkB(int node,int c){
+col[node] = c;
+vis[node] = 1;
+
+for(auto child : adj[node]){
+    if(vis[child] == 0){
+	if(checkB(child,c^1) == false){
+	    return false;
 	}
-	return ret;
+    }
+    else{
+	if(col[child] == col[node]){
+	    return false;
+	}
+    }
 }
 
+return true;
+
+
+}
 
 
 
