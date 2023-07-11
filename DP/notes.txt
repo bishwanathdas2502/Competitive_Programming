@@ -1,0 +1,18 @@
+1. in recursion of the dp write all false basecases first
+    then right the true condition
+
+
+    f(<parameters>){
+    //false basecase 1
+    //false basecase 2
+    //false basecase 3
+    .
+    .
+    .
+    .
+    .//true basecase 1
+    .//true basecase 2
+    .// true basecase 3
+
+
+    }
