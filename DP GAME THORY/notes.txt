@@ -25,6 +25,15 @@ steps tp solve
   donot add any result
   
   derive the answer by calculating what is optimal for alice from that derive for BOB
+
+
+1st              2nd
+DP[x] --------- DP[x-a]
+      --------- DP[x-b]
+      --------- DP[x-c]
+
+if any of 2nd stage is loosing the Dp[x] is winning
+if all state in 2nd stage is winning the DP[x] is loosing
   
   
   
