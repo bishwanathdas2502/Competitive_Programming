@@ -1,0 +1,17 @@
+number of subarray in  a sliding window while traversing 
+        int l = 0;
+        int n = nums.size();
+        int cnt = 0;
+        long long prod = 1;
+        int r;
+        for(r = 0;r<n;r++){
+            prod *= nums[r];
+            while(prod >= k ){
+                prod /= nums[l];
+                l++;
+            }
+            //ending at index r starting from l
+            cnt += r - l + 1;
+        }
+
+        
